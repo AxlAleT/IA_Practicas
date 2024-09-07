@@ -122,11 +122,11 @@ def main_loop():
     board = [[' ' for _ in range(4)] for _ in range(4)]  # Initialize the board
 
     # Load symbol textures
-    image_cross = pygame.image.load("TicTacToe/Cross.png").convert_alpha()
+    image_cross = pygame.image.load("Laboratorio 1: Busqueda aleatoria/TicTacToe/Cross.png").convert_alpha()
     cross = pygame.Surface(image_cross.get_size(), pygame.SRCALPHA)
     cross.blit(image_cross, (0, 0))
 
-    image_circle = pygame.image.load("TicTacToe/Circle.png").convert_alpha()
+    image_circle = pygame.image.load("Laboratorio 1: Busqueda aleatoria/TicTacToe/Circle.png").convert_alpha()
     circle = pygame.Surface(image_circle.get_size(), pygame.SRCALPHA)
     circle.blit(image_circle, (0, 0))
 
