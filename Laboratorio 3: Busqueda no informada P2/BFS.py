@@ -1,5 +1,5 @@
-def DFS(initial_node, solution, operators, operator_names):
-    """Implementation of the Depth-First Search (DFS) algorithm."""
+def BFS(initial_node, solution, operators, operator_names):
+    """Implementation of the breadth-First Search (BFS) algorithm."""
     frontier, visited, parents = [initial_node], [], {tuple(map(tuple, initial_node)) if isinstance(initial_node[0], list) else tuple(initial_node): None}
     moves = []
 
@@ -108,11 +108,11 @@ def print_path_and_moves(path, moves):
 
 
 # Running the code for the labyrinth
-path, moves = DFS(labyrinth_puzzle, labyrinth_solution, labyrinth_operators, labyrinth_operator_names)
+path, moves = BFS(labyrinth_puzzle, labyrinth_solution, labyrinth_operators, labyrinth_operator_names)
 print("Path and moves for the labyrinth:")
 print_path_and_moves(path, moves)
 
 # Running the code for puzzle 4
-path4, moves4 = DFS(puzzle4, [1, 2, 3, 4], operators4, operator_names4)
+path4, moves4 = BFS(puzzle4, [1, 2, 3, 4], operators4, operator_names4)
 print("\nPath and moves for puzzle 4:")
 print_path_and_moves(path4, moves4)
