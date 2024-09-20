@@ -4,8 +4,8 @@ def DFS(initial_node, solution, operators, operator_names):
     moves = []
 
     while frontier:
-        current_node = frontier.pop()
-
+        current_node = frontier.pop(0)   
+        #This line was changed from frontier.pop() to frontier.pop(0) to make it a BFS algorithm
         if current_node == solution:
             path = []
             while current_node:
@@ -105,7 +105,6 @@ def print_path_and_moves(path, moves):
             print(f"Move: {moves[i]}\n")
     
     print("Total moves: ", len(moves))
-
 
 
 # Running the code for the labyrinth
