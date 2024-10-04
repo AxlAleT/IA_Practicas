@@ -1,5 +1,6 @@
 import time
 import A_star
+import mazeGen
 
 def heuristic(node, solution):
     """Calculates the Manhattan distance between the '2' in the current node and the solution."""
@@ -42,33 +43,8 @@ def move_right(matrix): return move(matrix, lambda pos: (pos[0], pos[1] + 1))
 
 # Labyrinth definition
 # 0 = path, 1 = wall, 2 = starting position
-labyrinth_puzzle = [
-    [1, 2, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],
-    [1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-    [1, 0, 1, 1, 1, 1, 1, 0, 1, 1],
-    [1, 0, 1, 0, 0, 0, 0, 0, 1, 1],
-    [1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
-    [1, 0, 0, 0, 1, 0, 0, 0, 1, 1],
-    [1, 1, 1, 0, 1, 1, 1, 0, 0, 0],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-]
-
-
-labyrinth_solution = [
-    [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],
-    [1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-    [1, 0, 1, 1, 1, 1, 1, 0, 1, 1],
-    [1, 0, 1, 0, 0, 0, 0, 0, 1, 1],
-    [1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
-    [1, 0, 0, 0, 1, 0, 0, 0, 1, 1],
-    [1, 1, 1, 0, 1, 1, 1, 0, 0, 2],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-]
-
+labyrinth_puzzle = mazeGen.start_maze
+labyrinth_solution = mazeGen.solution_maze
 
 labyrinth_operators = [move_up, move_down, move_left, move_right]
 labyrinth_operator_names = ['move_up', 'move_down', 'move_left', 'move_right']
@@ -90,6 +66,5 @@ start_time = time.time()
 path, moves = A_star.A_star(labyrinth_puzzle, labyrinth_solution, labyrinth_operators, labyrinth_operator_names, heuristic)
 end_time = time.time()
 
-print("Path and moves for the labyrinth with A*:")
-print_path_and_moves(path, moves)
-print( f"Tiempo de ejecucion: {end_time - start_time}")
+print("Dimension del laberinto: " , mazeGen.height, "x", mazeGen.width)
+print( f"Tiempo de ejecucion: {end_time - start_time} segundos")
