@@ -37,8 +37,8 @@ def minimize(function, min_val, max_val, rate_of_change, iterations):
 # Example usage
 min_val = -5
 max_val = 5
-rate_of_change = 0.01
-iterations = 1000
+rate_of_change = 0.001
+iterations = 10000
 
 minimum, remaining_iterations = minimize(himmelblau, min_val, max_val, rate_of_change, iterations)
 print("Minimum found:", minimum, "After", iterations - remaining_iterations, "iterations")
