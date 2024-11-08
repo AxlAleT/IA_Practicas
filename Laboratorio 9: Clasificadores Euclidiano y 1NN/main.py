@@ -3,7 +3,7 @@ from classifiers import EuclideanClassifier, KNNClassifier
 from validation import hold_out, k_fold_cv, leave_one_out
 import numpy as np
 
-# Función para cargar y procesar datasets
+# Function to load and proccess dataset
 def load_and_process_dataset(id):
     dataset = fetch_ucirepo(id=id)
     X = dataset.data.features.to_numpy()
@@ -11,14 +11,14 @@ def load_and_process_dataset(id):
     classes, y = np.unique(y_strings, return_inverse=True)
     return X, y, dataset.metadata
 
-# Cargar datasets
+# Load datasets
 dataset_ids = [53, 109, 936]
 
-# Clasificadores
+# Classifiers
 euclidean_clf = EuclideanClassifier()
 knn_clf = KNNClassifier(n_neighbors=1)
 
-# Archivo para guardar resultados
+# File to save results
 results_file = "Laboratorio 9: Clasificadores Euclidiano y 1NN/results.txt"
 
 with open(results_file, "w") as file:
@@ -27,7 +27,7 @@ with open(results_file, "w") as file:
         dataset_name = metadata['name']
         dataset_abstract = metadata['abstract']
         
-        # Guardar nombre y abstract en el archivo
+        # Save dataset information
         file.write(f"\n\nDataset Name: {dataset_name}\n")
         file.write(f"Abstract: {dataset_abstract}\n\n")
         
