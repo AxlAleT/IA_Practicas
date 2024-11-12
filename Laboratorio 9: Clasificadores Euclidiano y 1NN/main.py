@@ -1,5 +1,5 @@
 from ucimlrepo import fetch_ucirepo
-from classifiers import EuclideanClassifier, KNNClassifier
+from classifiers import EuclideanClassifier, Classifier1NN
 from validation import hold_out, k_fold_cv, leave_one_out
 import numpy as np
 
@@ -16,7 +16,7 @@ dataset_ids = [53, 109, 936]
 
 # Classifiers
 euclidean_clf = EuclideanClassifier()
-knn_clf = KNNClassifier(n_neighbors=1)
+knn_clf = Classifier1NN()
 
 # File to save results
 results_file = "Laboratorio 9: Clasificadores Euclidiano y 1NN/results.txt"
@@ -37,7 +37,7 @@ with open(results_file, "w") as file:
         file.write(f"Confusion Matrix:\n{cm}\n\n")
 
         accuracy, cm = hold_out(knn_clf, X, y)
-        file.write(f"KNNClassifier Hold Out Accuracy: {accuracy}\n")
+        file.write(f"1NNClassifier Hold Out Accuracy: {accuracy}\n")
         file.write(f"Confusion Matrix:\n{cm}\n\n")
 
         # 10-Fold Cross Validation
@@ -46,7 +46,7 @@ with open(results_file, "w") as file:
         file.write(f"Confusion Matrix:\n{cm}\n\n")
 
         accuracy, cm = k_fold_cv(knn_clf, X, y)
-        file.write(f"KNNClassifier 10-Fold CV Accuracy: {accuracy}\n")
+        file.write(f"1NNClassifier 10-Fold CV Accuracy: {accuracy}\n")
         file.write(f"Confusion Matrix:\n{cm}\n\n")
 
         # Leave One Out
@@ -55,5 +55,7 @@ with open(results_file, "w") as file:
         file.write(f"Confusion Matrix:\n{cm}\n\n")
 
         accuracy, cm = leave_one_out(knn_clf, X, y)
-        file.write(f"KNNClassifier Leave One Out Accuracy: {accuracy}\n")
+        file.write(f"1NNClassifier Leave One Out Accuracy: {accuracy}\n")
         file.write(f"Confusion Matrix:\n{cm}\n\n")
+
+print("Task completed!")

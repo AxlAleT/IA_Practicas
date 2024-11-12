@@ -4,25 +4,25 @@ Dataset Name: Iris
 Abstract: A small classic dataset from Fisher, 1936. One of the earliest known datasets used for evaluating classification methods.
 
 
-EuclideanClassifier Hold Out Accuracy: 0.9333333333333333
+EuclideanClassifier Hold Out Accuracy: 0.9111111111111111
 Confusion Matrix:
-[[18  0  0]
- [ 0 10  1]
- [ 0  2 14]]
+[[15  0  0]
+ [ 0 13  2]
+ [ 0  2 13]]
 
-KNNClassifier Hold Out Accuracy: 0.9333333333333333
+1NNClassifier Hold Out Accuracy: 0.9777777777777777
 Confusion Matrix:
-[[16  0  0]
- [ 0 17  2]
- [ 0  1  9]]
+[[15  0  0]
+ [ 0 17  1]
+ [ 0  0 12]]
 
-EuclideanClassifier 10-Fold CV Accuracy: 0.9266666666666665
+EuclideanClassifier 10-Fold CV Accuracy: 0.9333333333333333
 Confusion Matrix:
 [[50  0  0]
  [ 0 46  4]
- [ 0  7 43]]
+ [ 0  6 44]]
 
-KNNClassifier 10-Fold CV Accuracy: 0.96
+1NNClassifier 10-Fold CV Accuracy: 0.96
 Confusion Matrix:
 [[50  0  0]
  [ 0 47  3]
@@ -33,7 +33,7 @@ Confusion Matrix:
 [[138 143]
  [145 138]]
 
-KNNClassifier Leave One Out Accuracy: 0.96
+1NNClassifier Leave One Out Accuracy: 0.96
 Confusion Matrix:
 [[144 147]
  [147 144]]
@@ -43,36 +43,36 @@ Confusion Matrix:
 Dataset Name: Wine
 Abstract: Using chemical analysis to determine the origin of wines
 
-EuclideanClassifier Hold Out Accuracy: 0.7037037037037037
+EuclideanClassifier Hold Out Accuracy: 0.7222222222222222
 Confusion Matrix:
-[[12  0  3]
- [ 3 13  7]
- [ 0  3 13]]
+[[18  0  2]
+ [ 1 13  6]
+ [ 0  6  8]]
 
-KNNClassifier Hold Out Accuracy: 0.7407407407407407
+1NNClassifier Hold Out Accuracy: 0.7222222222222222
 Confusion Matrix:
-[[21  1  0]
- [ 1 13  4]
- [ 2  6  6]]
+[[15  0  1]
+ [ 2 17  3]
+ [ 4  5  7]]
 
-EuclideanClassifier 10-Fold CV Accuracy: 0.7251633986928103
+EuclideanClassifier 10-Fold CV Accuracy: 0.7294117647058824
 Confusion Matrix:
 [[50  0  9]
- [ 3 49 19]
+ [ 3 50 18]
  [ 1 17 30]]
 
-KNNClassifier 10-Fold CV Accuracy: 0.7434640522875817
+1NNClassifier 10-Fold CV Accuracy: 0.7408496732026144
 Confusion Matrix:
 [[50  5  4]
- [ 5 54 12]
- [ 2 18 28]]
+ [ 4 51 16]
+ [ 2 15 31]]
 
 EuclideanClassifier Leave One Out Accuracy: 0.7247191011235955
 Confusion Matrix:
 [[129 157]
  [150 129]]
 
-KNNClassifier Leave One Out Accuracy: 0.7696629213483146
+1NNClassifier Leave One Out Accuracy: 0.7696629213483146
 Confusion Matrix:
 [[137 156]
  [159 137]]
@@ -83,36 +83,36 @@ Dataset Name: National Poll on Healthy Aging (NPHA)
 Abstract: This is a subset of the NPHA dataset filtered down to develop and validate machine learning algorithms for predicting the number of doctors a survey respondent sees in a year. This dataset’s records represent seniors who responded to the NPHA survey.
 
 
-EuclideanClassifier Hold Out Accuracy: 0.37209302325581395
+EuclideanClassifier Hold Out Accuracy: 0.34418604651162793
 Confusion Matrix:
-[[13 19 11]
- [28 42 47]
- [16 14 25]]
+[[17  7 10]
+ [48 32 46]
+ [18 12 25]]
 
-KNNClassifier Hold Out Accuracy: 0.413953488372093
+1NNClassifier Hold Out Accuracy: 0.4
 Confusion Matrix:
-[[ 6 21 15]
- [18 67 24]
- [10 38 16]]
+[[ 5 20 15]
+ [28 61 28]
+ [10 28 20]]
 
-EuclideanClassifier 10-Fold CV Accuracy: 0.3836267605633803
+EuclideanClassifier 10-Fold CV Accuracy: 0.39784820031298895
 Confusion Matrix:
-[[ 33  49  49]
- [101 144 127]
- [ 41  73  97]]
+[[ 34  53  44]
+ [ 94 149 129]
+ [ 45  65 101]]
 
-KNNClassifier 10-Fold CV Accuracy: 0.4143388106416276
+1NNClassifier 10-Fold CV Accuracy: 0.4115610328638498
 Confusion Matrix:
-[[ 24  69  38]
- [ 70 210  92]
- [ 39 110  62]]
+[[ 21  80  30]
+ [ 62 205 105]
+ [ 42 101  68]]
 
 EuclideanClassifier Leave One Out Accuracy: 0.38935574229691877
 Confusion Matrix:
 [[278 508]
  [484 278]]
 
-KNNClassifier Leave One Out Accuracy: 0.4019607843137255
+1NNClassifier Leave One Out Accuracy: 0.4019607843137255
 Confusion Matrix:
 [[287 506]
  [495 287]]

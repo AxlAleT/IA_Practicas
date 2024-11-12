@@ -9,10 +9,10 @@ class EuclideanClassifier:
         distances = np.linalg.norm(X[:, np.newaxis] - self.centroids_, axis=2)
         return self.classes_[np.argmin(distances, axis=1)]
 
-class KNNClassifier:
-    def __init__(self, n_neighbors=1):
-        self.n_neighbors = n_neighbors
-
+class Classifier1NN:
+    def __init__(self):
+        self.n_neighbors = 1
+        
     def fit(self, X, y):
         self.X_train = X
         self.y_train = y
@@ -21,4 +21,5 @@ class KNNClassifier:
         distances = np.linalg.norm(X[:, np.newaxis] - self.X_train, axis=2)
         nearest_indices = np.argsort(distances, axis=1)[:, :self.n_neighbors]
         nearest_labels = self.y_train[nearest_indices]
-        return np.array([np.bincount(labels).argmax() for labels in nearest_labels])
+        nearest_label = nearest_labels[:, 0]
+        return nearest_label
