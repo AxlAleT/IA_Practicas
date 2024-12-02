@@ -1,0 +1,59 @@
+
+
+Dataset Name: Glass Identification
+Abstract: From USA Forensic Science Service; 6 types of glass; defined in terms of their oxide content (i.e. Na, Fe, K, etc)
+
+MLPClassifier Hold Out Accuracy: 0.4307692307692308
+Confusion Matrix:
+[[20  0  0  0  0  0]
+ [25  2  0  0  0  1]
+ [ 7  0  0  0  0  0]
+ [ 2  0  0  0  0  0]
+ [ 1  1  0  0  0  0]
+ [ 0  0  0  0  0  6]]
+
+MLPClassifier 10-Fold CV Accuracy: 0.4766233766233766
+Confusion Matrix:
+[[35 35  0  0  0  0]
+ [29 44  0  0  0  3]
+ [11  6  0  0  0  0]
+ [ 0  7  0  0  0  6]
+ [ 2  7  0  0  0  0]
+ [ 2  3  0  1  0 23]]
+
+MLPClassifier Leave One Out Accuracy: 0.43457943925233644
+Confusion Matrix:
+[[34 36  0  0  0  0]
+ [35 37  0  3  0  1]
+ [14  3  0  0  0  0]
+ [ 0  8  0  1  0  4]
+ [ 0  5  0  1  0  3]
+ [ 2  5  0  1  0 21]]
+
+RBFClassifier Hold Out Accuracy: 0.5846153846153846
+Confusion Matrix:
+[[14  9  0  0  0  0]
+ [ 3 18  0  0  0  0]
+ [ 4  1  0  0  0  0]
+ [ 0  3  0  0  0  0]
+ [ 0  3  0  0  0  0]
+ [ 0  4  0  0  0  6]]
+
+RBFClassifier 10-Fold CV Accuracy: 0.5794372294372294
+Confusion Matrix:
+[[48 22  0  0  0  0]
+ [17 59  0  0  0  0]
+ [10  7  0  0  0  0]
+ [ 0 13  0  0  0  0]
+ [ 0  9  0  0  0  0]
+ [ 1 11  0  0  0 17]]
+
+RBFClassifier Leave One Out Accuracy: 0.5887850467289719
+Confusion Matrix:
+[[52 18  0  0  0  0]
+ [16 55  0  0  0  5]
+ [11  6  0  0  0  0]
+ [ 0 10  0  0  0  3]
+ [ 0  8  0  0  0  1]
+ [ 0 10  0  0  0 19]]
+

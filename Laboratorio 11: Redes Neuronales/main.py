@@ -12,7 +12,7 @@ def load_and_process_dataset(id):
     return X, y, dataset.metadata
 
 # Load datasets
-dataset_ids = [109]#, 109, 936]
+dataset_ids = [42]#, 109, 936]
 
 results_file = "Laboratorio 11: Redes Neuronales/results.txt"
 
@@ -28,8 +28,8 @@ with open(results_file, "w") as file:
         file.write(f"Abstract: {dataset_abstract}\n\n")
 
         # Initialize classifiers for each dataset
-        mlp_clf = MLPClassifier(epochs=50, batch_size=64)
-        rbf_clf = RBFClassifier(num_centers=50, epochs=50, batch_size=64)
+        mlp_clf = MLPClassifier(hidden_layer_sizes=(20, 10), activation='relu', epochs=100, batch_size=16)
+        rbf_clf = RBFClassifier(num_centers=30, sigma=0.5, epochs=100, batch_size=16)
 
         classifiers = {
             "MLPClassifier": mlp_clf,

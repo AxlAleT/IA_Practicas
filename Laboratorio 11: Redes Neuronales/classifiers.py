@@ -3,6 +3,10 @@ import numpy as np
 import os
 import pickle
 
+os.environ["OMP_NUM_THREADS"] = "4"  # Establece el número de hilos de CPU que deseas usar
+os.environ["TF_NUM_INTRAOP_THREADS"] = "4"
+os.environ["TF_NUM_INTEROP_THREADS"] = "4"
+
 class RBFClassifier:
     def __init__(self, num_centers=10, sigma=1.0, epochs=100, batch_size=32):
         self.num_centers = num_centers
@@ -14,8 +18,8 @@ class RBFClassifier:
 
     def fit(self, X, y, dataset_id, validation_method):
         if validation_method == 'hold_out':
-            model_path = f"Laboratorio 11: Redes Neuronales/rbf_model_{dataset_id}_{validation_method}.h5"
-            centers_path = f"Laboratorio 11: Redes Neuronales/rbf_centers_{dataset_id}_{validation_method}.pkl"
+            model_path = f"Laboratorio 11: Redes Neuronales/models/rbf_model_{dataset_id}_{validation_method}.h5"
+            centers_path = f"Laboratorio 11: Redes Neuronales/models/rbf_centers_{dataset_id}_{validation_method}.pkl"
             if os.path.exists(model_path) and os.path.exists(centers_path):
                 self.model = tf.keras.models.load_model(model_path)
                 with open(centers_path, 'rb') as f:
@@ -43,8 +47,8 @@ class RBFClassifier:
 
     def predict(self, X, dataset_id, validation_method):
         if self.model is None and validation_method == 'hold_out':
-            model_path = f"Laboratorio 11: Redes Neuronales/rbf_model_{dataset_id}_{validation_method}.h5"
-            centers_path = f"Laboratorio 11: Redes Neuronales/rbf_centers_{dataset_id}_{validation_method}.pkl"
+            model_path = f"Laboratorio 11: Redes Neuronales/models/rbf_model_{dataset_id}_{validation_method}.h5"
+            centers_path = f"Laboratorio 11: Redes Neuronales/models/rbf_centers_{dataset_id}_{validation_method}.pkl"
             self.model = tf.keras.models.load_model(model_path)
             with open(centers_path, 'rb') as f:
                 self.centers = pickle.load(f)
@@ -64,7 +68,7 @@ class MLPClassifier:
 
     def fit(self, X, y, dataset_id, validation_method):
         if validation_method == 'hold_out':
-            model_path = f"Laboratorio 11: Redes Neuronales/mlp_model_{dataset_id}_{validation_method}.h5"
+            model_path = f"Laboratorio 11: Redes Neuronales/models/mlp_model_{dataset_id}_{validation_method}.h5"
             if os.path.exists(model_path):
                 self.model = tf.keras.models.load_model(model_path)
                 return
@@ -82,7 +86,7 @@ class MLPClassifier:
 
     def predict(self, X, dataset_id, validation_method):
         if self.model is None and validation_method == 'hold_out':
-            model_path = f"Laboratorio 11: Redes Neuronales/mlp_model_{dataset_id}_{validation_method}.h5"
+            model_path = f"Laboratorio 11: Redes Neuronales/models/mlp_model_{dataset_id}_{validation_method}.h5"
             if os.path.exists(model_path):
                 self.model = tf.keras.models.load_model(model_path)
         predictions = self.model.predict(X)

@@ -1,0 +1,41 @@
+
+
+Dataset Name: Wine
+Abstract: Using chemical analysis to determine the origin of wines
+
+MLPClassifier Hold Out Accuracy: 0.7962962962962963
+Confusion Matrix:
+[[10  3  0]
+ [ 4 24  0]
+ [ 1  3  9]]
+
+MLPClassifier 10-Fold CV Accuracy: 0.8143790849673203
+Confusion Matrix:
+[[44 14  1]
+ [ 3 62  6]
+ [ 0  9 39]]
+
+MLPClassifier Leave One Out Accuracy: 0.7415730337078652
+Confusion Matrix:
+[[46  8  5]
+ [ 4 58  9]
+ [ 1 19 28]]
+
+RBFClassifier Hold Out Accuracy: 0.3333333333333333
+Confusion Matrix:
+[[ 0 23  0]
+ [ 0 18  0]
+ [ 0 13  0]]
+
+RBFClassifier 10-Fold CV Accuracy: 0.3990196078431373
+Confusion Matrix:
+[[ 0 59  0]
+ [ 0 71  0]
+ [ 0 48  0]]
+
+RBFClassifier Leave One Out Accuracy: 0.398876404494382
+Confusion Matrix:
+[[ 0 59  0]
+ [ 0 71  0]
+ [ 0 48  0]]
+
